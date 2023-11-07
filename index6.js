@@ -160,7 +160,7 @@ document.querySelector('#book-form').addEventListener('submit', function(e){
     ui.addBookToList(totalCbm, totalPrice)
     ui.TotalArray(totalCbm, totalPrice)
     ui.clearList()
-    ui.showMessage('Book Added ', 'success');
+    ui.showMessage('Goods Added ', 'success');
 }
 
 
@@ -214,7 +214,11 @@ document.querySelector('#done').addEventListener('click', function(){
         document.querySelector('.nsubmit').addEventListener('click', function(){  
             $('body').scrollTop(0);  
             
-            createPDF();  
+            createPDF();
+            setTimeout(function(){
+                location.reload()
+            }, 3000)  
+           
         });  
         
         function createPDF() {  
