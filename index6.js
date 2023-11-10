@@ -113,11 +113,11 @@ class UI{
         const totalRow = document.createElement('tr');
             totalRow.innerHTML = `
             <td>Total=</td>
-            <td>${totalCtn}</td>
+            <td>${totalCtn}Ctns</td>
             <td>-</td>
             <td>${CbmTotal}</td>
             <td>-</td>
-            <td>${ctnTotal.toFixed(2)}</td>
+            <td>$${ctnTotal.toFixed(2)}</td>
             <td><a href="#" class="delete">x</a></td>
             `
             const parent = document.querySelector('#book-list')
@@ -129,6 +129,7 @@ class UI{
         const oldButton = document.querySelector('#done');
         const btnContainer = document.querySelector('.btn_container');
         btnContainer.replaceChild(submit, oldButton);
+        submit.required = true;
         submit.style.display = 'block'
     }
 }
@@ -209,7 +210,7 @@ document.querySelector('#done').addEventListener('click', function(){
         
         var form = $('.table'),  
         cache_width = form.width(),  
-        a4 = [595.28, 841.89]; // for a4 size paper width and height  
+        a4 = [900, 841.89]; // for a4 size paper width and height  
     
         document.querySelector('.nsubmit').addEventListener('click', function(){  
             $('body').scrollTop(0);  
@@ -237,7 +238,7 @@ document.querySelector('#done').addEventListener('click', function(){
         }  
           
         function getCanvas() {  
-            form.width((a4[1] * 1.33333) - 80).css('max-width', 'none');  
+            form.width((a4[2] * 1.33333) - 80).css('max-width', 'none');  
             return html2canvas(form, {  
                 imageTimeout: 2000,  
                 removeContainer: true  
